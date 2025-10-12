@@ -1,0 +1,19 @@
+.cards div{
+    display: flex;
+    background-color: bisque;
+    flex-direction: column;
+}
+
+.cards{
+    display: flex;
+    gap: 20px;
+    height: 200px;
+}
+
+.bonba{
+    padding: 20px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+
