@@ -1,29 +1,32 @@
-html{
-    background-color: rgb(255, 251, 251);
+html {
+	background-color: #458588;
 }
 
-.cards div{
-    display: flex;
-    background-color: bisque;
-    flex-direction: column;
+.cards div {
+	display: flex;
+	background-color: #fbf1c7;
+	;
+	flex-direction: column;
 }
 
-.cards{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    border: 5px solid hsl(241, 72%, 34%);
-    justify-content: center;
-    padding: 20px;
+.cards {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	border: 5px solid hsl(241, 72%, 34%);
+	justify-content: center;
+	padding: 20px;
+	color: #3c3836;
 }
 
-.bonba{
-    padding: 20px;
-    box-sizing: border-box;
-    min-width: 200px;
-    min-height: 200px;
+.bonba {
+	padding: 20px;
+	box-sizing: border-box;
+	min-width: 200px;
+	min-height: 200px;
 }
 
-
-
-
+.bonba>div:last-child {
+	background-color: #cc241d;
+	color: #fbf1c7;
+}
