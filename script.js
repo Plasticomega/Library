@@ -11,9 +11,9 @@ function Book(name, author, pages, read) {
 
 function addBookToLibrary(name, author, pages, read) {
 	const newBook = new Book(name, author, pages, read);
+
 	myLibrary.unshift(newBook)
 }
-
 addBookToLibrary("how to", "mr john", 294, true)
 addBookToLibrary("boom", "mr electric", 230, false)
 addBookToLibrary("cool", "john cool", 400, true)
@@ -36,7 +36,12 @@ function displayBook() {
 		pages.textContent = `No. of pages: ${element.pages}`
 
 		const read = document.createElement('div')
-		read.textContent = `Status: ${element.read ? "Read" : "Not read"}`
+		read.classList.add("readStatus")
+		checkRead()
+		read.addEventListener("click", () => {
+			element.read = !element.read;
+			checkRead()
+		})
 		newBook.appendChild(name)
 		newBook.appendChild(author)
 		newBook.appendChild(pages)
@@ -53,6 +58,7 @@ addbook.addEventListener('click', () => {
 	dialog.showModal()
 	console.log("no")
 })
+
 
 
 const submitBtn = document.querySelector("#submitBtn")
@@ -74,7 +80,7 @@ submitBtn.addEventListener('click', function(e) {
 	e.preventDefault()
 
 	if (form.checkValidity()) {
-		addBookToLibrary(bookname.value, bookauthor.value, bookpages.value, bookread.value)
+		addBookToLibrary(bookname.value, bookauthor.value, bookpages.value, bookread.checked)
 		dialog.close()
 		resetInput()
 		displayBook()
