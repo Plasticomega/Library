@@ -1,5 +1,10 @@
 const myLibrary = [];
 
+const submitBtn = document.querySelector("#submitBtn")
+const bookname = document.querySelector("#bookname")
+const bookpages = document.querySelector("#bookpages")
+const bookread = document.querySelector("#bookread")
+const bookauthor = document.querySelector("#bookauthor")
 
 function Book(name, author, pages, read) {
 	this.id = crypto.randomUUID()
@@ -19,7 +24,6 @@ addBookToLibrary("boom", "mr electric", 230, false)
 addBookToLibrary("cool", "john cool", 400, true)
 addBookToLibrary("sigma", "steve sigma", 69, true)
 
-
 function displayBook() {
 	document.querySelector('.cards').innerHTML = "";
 	myLibrary.forEach(element => {
@@ -37,6 +41,9 @@ function displayBook() {
 
 		const read = document.createElement('div')
 		read.classList.add("readStatus")
+		function checkRead() {
+			if (element.read === true) { read.textContent = `Read`; } else { read.textContent = `Not Read` }
+		}
 		checkRead()
 		read.addEventListener("click", () => {
 			element.read = !element.read;
@@ -61,14 +68,9 @@ addbook.addEventListener('click', () => {
 
 
 
-const submitBtn = document.querySelector("#submitBtn")
-const bookname = document.querySelector("#bookname")
-const bookpages = document.querySelector("#bookpages")
-const bookread = document.querySelector("#bookread")
-const bookauthor = document.querySelector("#bookauthor")
 
 function resetInput() {
-	bookread.value = null;
+	bookread.checked = false;
 	bookname.value = "";
 	bookpages.value = "";
 	bookauthor.value = "";
@@ -82,8 +84,8 @@ submitBtn.addEventListener('click', function(e) {
 	if (form.checkValidity()) {
 		addBookToLibrary(bookname.value, bookauthor.value, bookpages.value, bookread.checked)
 		dialog.close()
-		resetInput()
 		displayBook()
+		resetInput()
 	} else {
 		form.reportValidity()
 	}
