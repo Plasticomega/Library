@@ -1,5 +1,9 @@
-html {
+body {
 	background-color: #458588;
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .cards div {
@@ -7,6 +11,87 @@ html {
 	background-color: #fbf1c7;
 	;
 	flex-direction: column;
+}
+
+.header {
+	min-height: 40px;
+	background-color: #562B35;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-wrapper {
+	min-height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#doofGif {
+	position: fixed;
+	bottom: 0px;
+	right: 20px;
+	width: 200px;
+	/* adjust size */
+	z-index: 9999;
+}
+
+
+button {
+	align-items: center;
+	background-color: #d79921;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: .25rem;
+	box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+	box-sizing: border-box;
+
+	color: #af3a03;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1.25;
+	margin: 0;
+	min-height: 3rem;
+	padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+	position: relative;
+	text-decoration: none;
+	transition: all 250ms;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: baseline;
+	width: auto;
+}
+
+button:hover,
+.button-6:focus {
+	border-color: rgba(0, 0, 0, 0.15);
+	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+button:hover {
+	transform: translateY(-1px);
+}
+
+button:active {
+	background-color: #F0F0F1;
+	border-color: rgba(0, 0, 0, 0.15);
+	box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+	color: rgba(0, 0, 0, 0.65);
+	transform: translateY(0);
+}
+
+
+.header div {
+	color: #f9f5d7;
+	padding: 10px;
+	font-size: 30px;
+	font-weight: 800;
 }
 
 .cards {

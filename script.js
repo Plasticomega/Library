@@ -60,10 +60,11 @@ function displayBook() {
 let dialog = document.querySelector("#bookDialog")
 
 const addbook = document.querySelector("#openDialog")
+const doofGif = document.querySelector("#doofGif")
 
 addbook.addEventListener('click', () => {
 	dialog.showModal()
-	console.log("no")
+	doofGif.hidden = false
 })
 
 
@@ -86,6 +87,7 @@ submitBtn.addEventListener('click', function(e) {
 		dialog.close()
 		displayBook()
 		resetInput()
+		doofGif.hidden = true
 	} else {
 		form.reportValidity()
 	}
