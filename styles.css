@@ -4,6 +4,7 @@ body {
 	padding: 0;
 
 	font-family: 'Courier New', Courier, monospace;
+	box-sizing: border-box;
 }
 
 .cards div {
@@ -34,10 +35,16 @@ body {
 	bottom: 0px;
 	right: 20px;
 	width: 200px;
-	/* adjust size */
 	z-index: 9999;
 }
 
+.overlay {
+	background-color: hsla(0 0% 0% / 0.4);
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: 10;
+}
 
 button {
 	align-items: center;
@@ -127,4 +134,15 @@ button:active {
 
 .readStatus:hover {
 	cursor: pointer;
+}
+
+#bookDialog {
+	padding: 0;
+	border: none;
+	background-color: hsla(0 0% 0% / 0.3);
+}
+
+.form {
+	padding: 15px;
+	z-index: 100;
 }

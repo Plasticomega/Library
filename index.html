@@ -9,25 +9,24 @@
 </head>
 
 <body>
+
+	<div class="overlay" hidden></div>
 	<div class="header">
 		<div>Library</div>
 	</div>
 	<dialog id="bookDialog">
 		<form class="form">
 			<div>
-				<label for="bookname">Book name: </label>
-				<input type="text" name="Book name" id="bookname" required>
+				<input type="text" name="Book name" placeholder="Title" id="bookname" required>
 			</div>
 			<div>
-				<label for="bookauthor">Author name: </label>
-				<input type="text" name="Book author" id="bookauthor" required>
+				<input type="text" name="Book author" placeholder="Author" id="bookauthor" required>
 			</div>
 			<div>
-				<label for="bookpages">Number of pages: </label>
-				<input type="number" name="pages" id="bookpages" required>
+				<input type="number" name="pages" placeholder="Pages" id="bookpages" required>
 			</div>
 			<div>
-				<label for="bookread">Read : </label>
+				<label for="bookread">Have you read it</label>
 				<input type="checkbox" name="bookread" id="bookread">
 			</div>
 			<button id="submitBtn">submit</button>

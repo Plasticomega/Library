@@ -61,13 +61,19 @@ let dialog = document.querySelector("#bookDialog")
 
 const addbook = document.querySelector("#openDialog")
 const doofGif = document.querySelector("#doofGif")
+const overlay = document.querySelector(".overlay")
 
 addbook.addEventListener('click', () => {
 	dialog.showModal()
 	doofGif.hidden = false
+	over.hidden = false;
+
 })
 
-
+dialog.addEventListener("close", () => {
+	doofGif.hidden = true;
+	overlay.hidden = true;
+})
 
 
 function resetInput() {
@@ -88,11 +94,19 @@ submitBtn.addEventListener('click', function(e) {
 		displayBook()
 		resetInput()
 		doofGif.hidden = true
+		overlay.hidden = true
 	} else {
 		form.reportValidity()
 	}
 
 
 })
+
+
+document.addEventListener('click', function(event) {
+	if (!form.contains(event.target)) {
+		console.log('Clicked outside the element!');
+	}
+});
 
 displayBook()
