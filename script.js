@@ -66,8 +66,7 @@ const overlay = document.querySelector(".overlay")
 addbook.addEventListener('click', () => {
 	dialog.showModal()
 	doofGif.hidden = false
-	over.hidden = false;
-
+	overlay.hidden = false;
 })
 
 dialog.addEventListener("close", () => {
@@ -102,11 +101,19 @@ submitBtn.addEventListener('click', function(e) {
 
 })
 
-
 document.addEventListener('click', function(event) {
-	if (!form.contains(event.target)) {
-		console.log('Clicked outside the element!');
+	let clickoutsideform = !form.contains(event.target)
+	let clickoutsidebtn = !addbook.contains(event.target)
+	if (dialog.open) {
+		if (clickoutsidebtn && clickoutsideform) {
+			dialog.close()
+			doofGif.hidden = true;
+			overlay.hidden = true;
+			console.log("hello");
+		}
 	}
 });
+
+
 
 displayBook()

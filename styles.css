@@ -124,11 +124,8 @@ button:active {
 
 .readStatus {
 	-webkit-user-select: none;
-	/* Safari */
 	-ms-user-select: none;
-	/* IE10+ */
 	user-select: none;
-	/* Standard syntax */
 }
 
 
@@ -139,7 +136,6 @@ button:active {
 #bookDialog {
 	padding: 0;
 	border: none;
-	background-color: hsla(0 0% 0% / 0.3);
 }
 
 .form {
