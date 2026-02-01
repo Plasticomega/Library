@@ -19,10 +19,20 @@ function addBookToLibrary(name, author, pages, read) {
 
 	myLibrary.unshift(newBook)
 }
+
+function removeBookFromLibrary(uuid) {
+	const index = myLibrary.findIndex(book => book.id === uuid)
+	if (index > -1) (
+		myLibrary.splice(index, 1)
+	)
+	displayBook()
+}
+
 addBookToLibrary("how to", "mr john", 294, true)
 addBookToLibrary("boom", "mr electric", 230, false)
 addBookToLibrary("cool", "john cool", 400, true)
 addBookToLibrary("sigma", "steve sigma", 69, true)
+
 
 function displayBook() {
 	document.querySelector('.cards').innerHTML = "";
@@ -31,28 +41,37 @@ function displayBook() {
 		newBook.classList.add('bonba')
 
 		const name = document.createElement('div')
-		name.textContent = `Name: ${element.name}`
+		name.textContent = `"${element.name}"`
 
 		const author = document.createElement('div')
-		author.textContent = `Author: ${element.author}`
+		author.textContent = `${element.author}`
 
 		const pages = document.createElement('div')
-		pages.textContent = `No. of pages: ${element.pages}`
+		pages.textContent = `${element.pages}`
 
 		const read = document.createElement('div')
 		read.classList.add("readStatus")
+		read.style.borderRadius = "5px"
 		function checkRead() {
-			if (element.read === true) { read.textContent = `Read`; } else { read.textContent = `Not Read` }
+			if (element.read === true) { read.textContent = `Read`; read.style.backgroundColor = "#b8bb26" } else { read.textContent = `Not Read`; read.style.backgroundColor = "#fb4934" }
 		}
 		checkRead()
 		read.addEventListener("click", () => {
 			element.read = !element.read;
 			checkRead()
 		})
+		const remove = document.createElement('div')
+		remove.textContent = "Remove"
+		remove.style.borderRadius = "5px"
+		remove.style.backgroundColor = "#fabd2f"
+		remove.addEventListener("mouseover", () => remove.style.cursor = "pointer")
+		remove.addEventListener("click", () => { removeBookFromLibrary(element.id) })
+
 		newBook.appendChild(name)
 		newBook.appendChild(author)
 		newBook.appendChild(pages)
 		newBook.appendChild(read)
+		newBook.appendChild(remove)
 		document.querySelector('.cards').appendChild(newBook)
 	});
 }

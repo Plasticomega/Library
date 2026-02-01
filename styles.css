@@ -5,6 +5,8 @@ body {
 
 	font-family: 'Courier New', Courier, monospace;
 	box-sizing: border-box;
+	display: grid;
+	grid-template-rows: auto auto 1fr;
 }
 
 .cards div {
@@ -107,20 +109,30 @@ button:active {
 	justify-content: center;
 	padding: 20px;
 	color: #3c3836;
-	height: 100vh;
-
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .bonba {
 	padding: 20px;
 	box-sizing: border-box;
 	height: 250px;
-
+	line-height: 1.5;
+	text-align: center;
 }
 
-.bonba>div:last-child {
-	background-color: #fb4934;
+.bonba>div {
+	margin: 5px;
+}
+
+
+
+.bonba {
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bonba:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .readStatus {
@@ -133,6 +145,8 @@ button:active {
 .readStatus:hover {
 	cursor: pointer;
 }
+
+
 
 #bookDialog {
 	padding: 0;
